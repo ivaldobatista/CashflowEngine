@@ -1,42 +1,28 @@
-version: '3.8'
-
 services:
-
   rabbitmq:
     image: rabbitmq:3-management
     container_name: rabbitmq
     hostname: rabbitmq
-    ports:
-      - "5672:5672"   
-      - "15672:15672" 
-    networks:
-      - cashflow-network
+    ports: ["5672:5672", "15672:15672"]
+    networks: [cashflow-network]
 
-  
   launch-api:
     container_name: launch-api
     build:
-      context: .
-      dockerfile: src/Cashflow.Launch/Cashflow.Launch.API/Dockerfile
-    ports:
-      - "8001:8080" 
-    depends_on:
-      - rabbitmq
-    networks:
-      - cashflow-network
+      context: ./src
+      dockerfile: Cashflow.Launch/Cashflow.Launch.API/Dockerfile
+    ports: ["8001:8080"]
+    depends_on: [rabbitmq]
+    networks: [cashflow-network]
 
- 
   consolidated-api:
     container_name: consolidated-api
     build:
-      context: .
-      dockerfile: src/Cashflow.Consolidated/Cashflow.Consolidated.API/Dockerfile
-    ports:
-      - "8002:8080" 
-    depends_on:
-      - rabbitmq
-    networks:
-      - cashflow-network
+      context: ./src
+      dockerfile: Cashflow.Consolidated/Cashflow.Consolidated.API/Dockerfile
+    ports: ["8002:8080"]
+    depends_on: [rabbitmq]
+    networks: [cashflow-network]
 
 networks:
   cashflow-network:
