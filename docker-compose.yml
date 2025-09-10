@@ -4,7 +4,16 @@ services:
     container_name: rabbitmq
     hostname: rabbitmq
     ports: ["5672:5672", "15672:15672"]
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
     networks: [cashflow-network]
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+      RABBITMQ_ALLOW_LOOPBACK_USERS: "guest"
 
   launch-api:
     container_name: launch-api
@@ -12,7 +21,9 @@ services:
       context: ./src
       dockerfile: Cashflow.Launch/Cashflow.Launch.API/Dockerfile
     ports: ["8001:8080"]
-    depends_on: [rabbitmq]
+    depends_on: 
+      rabbitmq:
+        condition: service_healthy
     networks: [cashflow-network]
 
   consolidated-api:
