@@ -49,7 +49,7 @@ public class CreateTransactionUseCase
         catch (Exception ex)
         {
             _logger.LogError(ex, "Ocorreu um erro ao processar a transação.");
-            throw; 
+            throw;
         }
     }
 }

@@ -11,6 +11,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cashflow.Launch.Infrastruct
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cashflow.Launch.API", "Cashflow.Launch\Cashflow.Launch.API\Cashflow.Launch.API.csproj", "{08FFCEA0-67D4-47CF-A843-EA91C22E81F4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cashflow.Consolidated.Domain", "Cashflow.Consolidated\Cashflow.Consolidated.Domain\Cashflow.Consolidated.Domain.csproj", "{99506585-7828-4B8E-A20A-9C430D0689B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cashflow.Consolidated.Application", "Cashflow.Consolidated\Cashflow.Consolidated.Application\Cashflow.Consolidated.Application.csproj", "{E29F86A0-5422-48C7-A987-E9CBBD9A7464}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cashflow.Consolidated.Infrastructure", "Cashflow.Consolidated.Infrastructure\Cashflow.Consolidated.Infrastructure.csproj", "{DD227E8B-5BBC-4300-9517-FFAC6485BAF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cashflow.Consolidated.API", "Cashflow.Consolidated.API\Cashflow.Consolidated.API.csproj", "{DAB667CC-4B8E-421A-8D41-0DDBA7ACD156}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cashflow.Launch.Domain.Tests", "..\tests\Cashflow.Launch.Domain.Tests\Cashflow.Launch.Domain.Tests.csproj", "{A1AB8FEB-8EF6-4D49-93BE-D36C08510C6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cashflow.Launch.Application.Tests", "..\tests\Cashflow.Launch.Application.Tests\Cashflow.Launch.Application.Tests.csproj", "{703F18F3-DD45-49D7-B40E-9C3E832A7324}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +45,30 @@ Global
 		{08FFCEA0-67D4-47CF-A843-EA91C22E81F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08FFCEA0-67D4-47CF-A843-EA91C22E81F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08FFCEA0-67D4-47CF-A843-EA91C22E81F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99506585-7828-4B8E-A20A-9C430D0689B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99506585-7828-4B8E-A20A-9C430D0689B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99506585-7828-4B8E-A20A-9C430D0689B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99506585-7828-4B8E-A20A-9C430D0689B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E29F86A0-5422-48C7-A987-E9CBBD9A7464}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E29F86A0-5422-48C7-A987-E9CBBD9A7464}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E29F86A0-5422-48C7-A987-E9CBBD9A7464}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E29F86A0-5422-48C7-A987-E9CBBD9A7464}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD227E8B-5BBC-4300-9517-FFAC6485BAF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD227E8B-5BBC-4300-9517-FFAC6485BAF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD227E8B-5BBC-4300-9517-FFAC6485BAF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD227E8B-5BBC-4300-9517-FFAC6485BAF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAB667CC-4B8E-421A-8D41-0DDBA7ACD156}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAB667CC-4B8E-421A-8D41-0DDBA7ACD156}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAB667CC-4B8E-421A-8D41-0DDBA7ACD156}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAB667CC-4B8E-421A-8D41-0DDBA7ACD156}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1AB8FEB-8EF6-4D49-93BE-D36C08510C6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1AB8FEB-8EF6-4D49-93BE-D36C08510C6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1AB8FEB-8EF6-4D49-93BE-D36C08510C6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1AB8FEB-8EF6-4D49-93BE-D36C08510C6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{703F18F3-DD45-49D7-B40E-9C3E832A7324}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{703F18F3-DD45-49D7-B40E-9C3E832A7324}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{703F18F3-DD45-49D7-B40E-9C3E832A7324}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{703F18F3-DD45-49D7-B40E-9C3E832A7324}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

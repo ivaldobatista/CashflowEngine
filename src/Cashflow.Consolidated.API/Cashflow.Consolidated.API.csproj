@@ -4,9 +4,8 @@
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>025e46f9-4f1b-41e1-995f-f08a46cce2cf</UserSecretsId>
+    <UserSecretsId>ee9ef88f-2d99-432c-80d2-30f8b5a37a29</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-    <DockerfileContext>..\..</DockerfileContext>
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,8 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Cashflow.Launch.Application\Cashflow.Launch.Application.csproj" />
-    <ProjectReference Include="..\Cashflow.Launch.Infrastructure\Cashflow.Launch.Infrastructure.csproj" />
+    <ProjectReference Include="..\Cashflow.Consolidated.Infrastructure\Cashflow.Consolidated.Infrastructure.csproj" />
+    <ProjectReference Include="..\Cashflow.Consolidated\Cashflow.Consolidated.Application\Cashflow.Consolidated.Application.csproj" />
   </ItemGroup>
 
 </Project>

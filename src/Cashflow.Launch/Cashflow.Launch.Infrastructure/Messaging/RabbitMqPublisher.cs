@@ -30,7 +30,6 @@ public class RabbitMqPublisher : IMessageBrokerPublisher, IDisposable
 
             _logger.LogInformation("Conexão com RabbitMQ estabelecida.");
 
-            // Fanout exchange will broadcast all messages to all queues it knows.
             _channel.ExchangeDeclare(exchange: ExchangeName, type: ExchangeType.Fanout);
         }
         catch (Exception ex)
@@ -47,7 +46,7 @@ public class RabbitMqPublisher : IMessageBrokerPublisher, IDisposable
 
         _channel.BasicPublish(
             exchange: ExchangeName,
-            routingKey: "", // Not used by fanout exchanges
+            routingKey: "",
             basicProperties: null,
             body: body);
 
