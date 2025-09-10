@@ -22,4 +22,8 @@
     <ProjectReference Include="..\Cashflow.Launch.Infrastructure\Cashflow.Launch.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
 </Project>
