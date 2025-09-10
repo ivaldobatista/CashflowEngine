@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Cashflow.Consolidated\Cashflow.Consolidated.Application\Cashflow.Consolidated.Application.csproj" />
+    <ProjectReference Include="..\Cashflow.Consolidated.Application\Cashflow.Consolidated.Application.csproj" />
   </ItemGroup>
 
 </Project>
