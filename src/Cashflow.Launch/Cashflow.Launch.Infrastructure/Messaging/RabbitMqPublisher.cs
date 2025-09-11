@@ -12,7 +12,7 @@ public class RabbitMqPublisher : IMessageBrokerPublisher, IDisposable
     private readonly ILogger<RabbitMqPublisher> _logger;
     private readonly IConnection _connection;
     private readonly IModel _channel;
-    private const string ExchangeName = "cashflow.fanout.transactions";
+    private const string ExchangeName = "transactions_exchange";
 
     public RabbitMqPublisher(IConfiguration configuration, ILogger<RabbitMqPublisher> logger)
     {
