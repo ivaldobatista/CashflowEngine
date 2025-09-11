@@ -27,11 +27,10 @@ try
     builder.Services.AddSingleton<IMessageBrokerPublisher, RabbitMqPublisher>();
 
     builder.Services.AddDbContext<LaunchDbContext>(options =>
-        options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+        options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection") ?? "Data Source=launch.db"));
 
     var app = builder.Build();
-
-    // Auto-apply migrations
+        
     using (var scope = app.Services.CreateScope())
     {
         var dbContext = scope.ServiceProvider.GetRequiredService<LaunchDbContext>();

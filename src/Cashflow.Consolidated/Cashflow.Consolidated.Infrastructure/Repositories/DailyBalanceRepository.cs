@@ -23,6 +23,7 @@ public class DailyBalanceRepository : IDailyBalanceRepository
     public async Task<DailyBalance?> GetByDateAsync(DateTime date)
     {
         return await _context.DailyBalances.FirstOrDefaultAsync(b => b.Date == date.Date);
+        //return await _context.DailyBalances.FirstOrDefaultAsync(); //apenas para teste
     }
 
     public async Task UpdateAsync(DailyBalance dailyBalance)

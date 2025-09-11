@@ -25,6 +25,11 @@ services:
       rabbitmq:
         condition: service_healthy
     networks: [cashflow-network]
+    volumes:
+      - ./data:/app/data
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ConnectionStrings__DefaultConnection=Data Source=/app/data/launch.db
 
   consolidated-api:
     container_name: consolidated-api
@@ -34,6 +39,11 @@ services:
     ports: ["8002:8080"]
     depends_on: [rabbitmq]
     networks: [cashflow-network]
+    volumes:
+      - ./data:/app/data
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ConnectionStrings__DefaultConnection=Data Source=/app/data/consolidated.db
 
 networks:
   cashflow-network:

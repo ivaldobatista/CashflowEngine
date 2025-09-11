@@ -12,7 +12,7 @@ public class RabbitMqPublisher : IMessageBrokerPublisher, IDisposable
     private readonly ILogger<RabbitMqPublisher> _logger;
     private readonly IConnection _connection;
     private readonly IModel _channel;
-    private const string ExchangeName = "transactions_exchange";
+    private const string ExchangeName = "cashflow.fanout.transactions";
 
     public RabbitMqPublisher(IConfiguration configuration, ILogger<RabbitMqPublisher> logger)
     {
@@ -30,7 +30,13 @@ public class RabbitMqPublisher : IMessageBrokerPublisher, IDisposable
 
             _logger.LogInformation("Conexão com RabbitMQ estabelecida.");
 
-            _channel.ExchangeDeclare(exchange: ExchangeName, type: ExchangeType.Fanout);
+            _channel.ExchangeDeclare(
+                        exchange: ExchangeName,
+                        type: ExchangeType.Fanout,
+                        durable: true,     
+                        autoDelete: false,
+                        arguments: null
+                    );
         }
         catch (Exception ex)
         {

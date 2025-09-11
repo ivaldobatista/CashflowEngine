@@ -12,6 +12,8 @@ public class LaunchDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Transaction>().HasKey(t => t.Id);
-        modelBuilder.Entity<Transaction>().Property(t => t.Amount).HasColumnType("decimal(18, 2)");
+        modelBuilder.Entity<Transaction>()
+        .Property(t => t.Amount)
+        .HasPrecision(18, 2);
     }
 }

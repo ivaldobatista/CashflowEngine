@@ -33,24 +33,6 @@ public class TransactionConsumer : BackgroundService
         _scopeFactory = serviceScopeFactory;
         _configuration = configuration;
 
-        //try
-        //{
-        //    var factory = new ConnectionFactory()
-        //    {
-        //        HostName = configuration["RabbitMq:HostName"],
-        //        UserName = configuration["RabbitMq:UserName"],
-        //        Password = configuration["RabbitMq:Password"],
-        //        DispatchConsumersAsync = true
-        //    };
-        //    _connection = factory.CreateConnection();
-        //    _channel = _connection.CreateModel();
-        //    _logger.LogInformation("Consumidor RabbitMQ conectado.");
-        //}
-        //catch (Exception ex)
-        //{
-        //    _logger.LogError(ex, "Não foi possível conectar o consumidor ao RabbitMQ.");
-        //    throw;
-        //}
     }
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)

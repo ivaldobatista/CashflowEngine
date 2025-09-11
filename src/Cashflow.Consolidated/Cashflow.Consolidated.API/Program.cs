@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NLog;
 using NLog.Web;
+using System.Globalization;
 
 var logger = NLog.LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
 logger.Debug("init main");
@@ -50,6 +51,18 @@ try
         [FromServices] GetDailyBalanceUseCase useCase,
         [FromServices] ILogger<Program> apiLogger) =>
     {
+        var _date = date.ToString("yyyy-MM-dd");
+        var _validDateFormats = new[] { "yyyy-MM-dd", "dd-MM-yyyy" };
+
+        if (!DateTime.TryParseExact(
+           _date,
+           _validDateFormats,
+           CultureInfo.InvariantCulture,
+           DateTimeStyles.None,
+           out var dt))
+        {
+            return Results.BadRequest("Formato de data inválido. Use yyyy-MM-dd ou dd-MM-yyyy.");
+        }
         apiLogger.LogInformation("Relatório para a data {Date} solicitado.", date.ToShortDateString());
         var result = await useCase.ExecuteAsync(date);
         return Results.Ok(result);
