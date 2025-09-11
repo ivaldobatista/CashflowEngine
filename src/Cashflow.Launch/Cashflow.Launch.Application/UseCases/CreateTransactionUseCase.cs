@@ -30,7 +30,7 @@ public class CreateTransactionUseCase
 
         try
         {
-            var transaction = new Transaction(request.Amount, transactionType);
+            var transaction = new Transaction(request.Amount, transactionType, request.Description); 
 
             _logger.LogInformation("Nova transação criada com ID: {TransactionId}", transaction.Id);
 

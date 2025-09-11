@@ -29,7 +29,7 @@ public class CreateTransactionUseCaseTests
     [Fact]
     public async Task ExecuteAsync_Should_Persist_And_Publish_When_Request_Is_Valid()
     {
-        var request = new CreateTransactionRequest(150.75m, "Credit");
+        var request = new CreateTransactionRequest(DateTime.Now, 150.75m, "Credit", "pix");
 
         await _useCase.ExecuteAsync(request);
 
@@ -45,7 +45,7 @@ public class CreateTransactionUseCaseTests
     [Fact]
     public async Task ExecuteAsync_Should_ThrowArgumentException_When_Type_Is_Invalid()
     {
-        var request = new CreateTransactionRequest(100m, "InvalidType");
+        var request = new CreateTransactionRequest(DateTime.Now, 100m, "InvalidType", "pix");
 
         await Assert.ThrowsAsync<ArgumentException>(() => _useCase.ExecuteAsync(request));
 
@@ -56,7 +56,7 @@ public class CreateTransactionUseCaseTests
     [Fact]
     public async Task ExecuteAsync_Should_ThrowArgumentException_When_DomainExceptionOccurs()
     {
-        var request = new CreateTransactionRequest(0m, "Debit");
+        var request = new CreateTransactionRequest(DateTime.Now, 0m, "Debit", "pix");
 
         await Assert.ThrowsAsync<ArgumentException>(() => _useCase.ExecuteAsync(request));
 

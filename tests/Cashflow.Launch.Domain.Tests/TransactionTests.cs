@@ -9,7 +9,7 @@ public class TransactionTests
     {
         var transactionType = TransactionType.Credit;
 
-        Action act = () => new Transaction(invalidAmount, transactionType);
+        Action act = () => new Transaction(invalidAmount, transactionType, "");
 
         var exception = Assert.Throws<ArgumentException>(act);
         Assert.Contains("Transaction amount must be a positive value", exception.Message);
@@ -21,7 +21,7 @@ public class TransactionTests
         var validAmount = 100.50m;
         var transactionType = TransactionType.Debit;
 
-        var transaction = new Transaction(validAmount, transactionType);
+        var transaction = new Transaction(validAmount, transactionType, "");
 
         Assert.NotNull(transaction);
         Assert.Equal(validAmount, transaction.Amount);
