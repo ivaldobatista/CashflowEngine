@@ -38,11 +38,10 @@ try
         dbContext.Database.Migrate();
     }
 
-    if (app.Environment.IsDevelopment())
-    {
-        app.UseSwagger();
-        app.UseSwaggerUI();
-    }
+    //LIBERADO PARA TODOS (POC)
+    app.UseSwagger();
+    app.UseSwaggerUI();
+
 
     app.UseHttpsRedirection();
 
