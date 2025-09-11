@@ -7,7 +7,7 @@ public class DailyBalance
     public decimal Balance { get; private set; }
     public DateTime LastUpdateUtc { get; private set; }
 
-    private DailyBalance() { }
+    public DailyBalance() { }
 
     public DailyBalance(DateTime date)
     {
