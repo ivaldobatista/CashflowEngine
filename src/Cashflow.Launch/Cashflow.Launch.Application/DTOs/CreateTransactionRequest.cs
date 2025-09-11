@@ -1,3 +1,3 @@
 ﻿namespace Cashflow.Launch.Application.DTOs;
 
-public record CreateTransactionRequest(decimal Amount, string Type);
+public record CreateTransactionRequest(DateTime Date, decimal Amount, string Type, string? Description);

@@ -93,7 +93,7 @@ public class TransactionConsumer : BackgroundService
         using var scope = _scopeFactory.CreateScope();
         var repository = scope.ServiceProvider.GetRequiredService<IDailyBalanceRepository>();
 
-        var transactionDate = transactionEvent.TimestampUtc.Date;
+        var transactionDate = transactionEvent.TransactionDate.Date;
         var dailyBalance = await repository.GetByDateAsync(transactionDate);
 
         bool isNew = dailyBalance == null;

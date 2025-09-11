@@ -35,11 +35,11 @@ public class CreateTransactionUseCase
             _logger.LogInformation("Nova transação criada com ID: {TransactionId}", transaction.Id);
 
             await _transactionRepository.AddAsync(transaction);
-
             var transactionEvent = new TransactionCreatedEvent(
                 transaction.Id,
                 transaction.Amount,
                 transaction.Type.ToString(),
+                request.Date,
                 transaction.TimestampUtc);
 
             await _messageBrokerPublisher.PublishAsync(transactionEvent);
