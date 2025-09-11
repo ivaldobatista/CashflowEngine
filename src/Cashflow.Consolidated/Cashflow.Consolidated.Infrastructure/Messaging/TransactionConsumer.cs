@@ -25,8 +25,8 @@ public class TransactionConsumer : BackgroundService
     private const string ExchangeName = "transactions_exchange";
     private const string QueueName = "consolidated_transactions_queue";
 
-    public TransactionConsumer(IConfiguration configuration, 
-        ILogger<TransactionConsumer> logger, 
+    public TransactionConsumer(IConfiguration configuration,
+        ILogger<TransactionConsumer> logger,
         IServiceScopeFactory serviceScopeFactory)
     {
         _logger = logger;
@@ -173,6 +173,7 @@ public class TransactionConsumer : BackgroundService
 
         ct.ThrowIfCancellationRequested();
     }
+
     public override void Dispose()
     {
         _channel?.Close();

@@ -33,7 +33,7 @@ public class RabbitMqPublisher : IMessageBrokerPublisher, IDisposable
             _channel.ExchangeDeclare(
                         exchange: ExchangeName,
                         type: ExchangeType.Fanout,
-                        durable: true,     
+                        durable: true,
                         autoDelete: false,
                         arguments: null
                     );

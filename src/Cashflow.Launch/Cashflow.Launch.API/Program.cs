@@ -30,7 +30,7 @@ try
         options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection") ?? "Data Source=launch.db"));
 
     var app = builder.Build();
-        
+
     using (var scope = app.Services.CreateScope())
     {
         var dbContext = scope.ServiceProvider.GetRequiredService<LaunchDbContext>();
